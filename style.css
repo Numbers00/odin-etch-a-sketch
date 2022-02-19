@@ -1,0 +1,111 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.cols-div {
+  min-height: 385px;
+  max-height: 385px;
+  display: flex;
+  gap: 40px;
+}
+
+.left-div {
+  min-height: 385px;
+  max-height: 385px;
+}
+
+.ctrls-div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ctrl-card {
+  min-width: 75px;
+  max-width: 75px;
+  min-height: 75px;
+  max-height: 75px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;
+}
+
+.ctrl-card:hover {
+  cursor: pointer;
+  background-color: #555;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  color: white;
+}
+
+.ctrl-card:active {
+  cursor: pointer;
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  color: white;
+}
+
+.top-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-div {
+  min-height: 420px;
+  max-height: 420px;
+  min-width: 420px;
+  max-width: 420px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  background-color: lightblue;
+}
+
+
+/* Credits: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider */
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.bottom-div {
+  display: flex;
+  justify-content: space-around;
+}
