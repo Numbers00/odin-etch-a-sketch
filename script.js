@@ -1,7 +1,9 @@
 window.onload = () => {
   window.addEventListener('keydown', keydownDetected);
-  
+
   selectPen();
+  toggleLock(document.getElementById('ctrl-lock'));
+  
   addGridCards(16);
 }
 
