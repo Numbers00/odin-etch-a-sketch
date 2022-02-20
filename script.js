@@ -1,5 +1,7 @@
 window.onload = () => {
   window.addEventListener('keydown', keydownDetected);
+  
+  selectPen();
   addGridCards(16);
 }
 
