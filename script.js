@@ -46,8 +46,11 @@ function changeGridNum(num) {
   addGridCards(num);
 }
 
-function toggleLock() {
-  document.querySelector('.slider').disabled = !document.querySelector('.slider').disabled;
+function toggleLock(btnCard) {
+  const slider = document.querySelector('.slider');
+  slider.disabled = !slider.disabled;
+  if (slider.disabled) btnCard.classList = 'ctrl-card active';
+  else btnCard.classList = 'ctrl-card';
 }
 
 function selectPen() {
