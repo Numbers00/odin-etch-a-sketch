@@ -1,6 +1,7 @@
 body {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .cols-div {
@@ -64,10 +65,15 @@ body {
   min-width: 420px;
   max-width: 420px;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  background-color: lightblue;
 }
 
+.grid-card {
+  border: 1px solid rgba(0,0,0,0.2);
+}
+
+.grid-card:hover {
+  background-color: #fbec5d;
+}
 
 /* Credits: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider */
 .slidecontainer {
@@ -77,7 +83,7 @@ body {
 .slider {
   -webkit-appearance: none;
   width: 100%;
-  height: 25px;
+  height: 12.5px;
   background: #d3d3d3;
   outline: none;
   opacity: 0.7;
@@ -92,15 +98,15 @@ body {
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 12.5px;
+  height: 12.5px;
   background: #04AA6D;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 12.5px;
+  height: 12.5px;
   background: #04AA6D;
   cursor: pointer;
 }
