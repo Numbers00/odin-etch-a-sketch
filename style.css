@@ -48,7 +48,7 @@ a {
   line-height: 75px;
 }
 
-.ctrl-card:hover {
+.ctrl-card:hover:not(.active) {
   cursor: pointer;
   background-color: #555;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -60,6 +60,11 @@ a {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+  color: white;
+}
+
+.active {
+  background-color: #3e8e41;
   color: white;
 }
 
@@ -80,13 +85,13 @@ a {
   border: 1px solid rgba(0,0,0,0.2);
 }
 
-.grid-card:hover {
-  background-color: #fbec5d;
+.slider-div {
+  display: flex;
 }
 
 /* Credits: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_rangeslider */
 .slidecontainer {
-  width: 100%;
+  width: 92%;
 }
 
 .slider {
@@ -121,7 +126,13 @@ a {
   cursor: pointer;
 }
 
+#grid-num-display {
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .right-div {
+  margin-right: 5%;
   width: 30%;
   align-self: center;
   flex-grow: 1;

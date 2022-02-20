@@ -13,20 +13,24 @@
     <div class="app-cols-div">
       <div class="app-left-div">
         <div class="ctrls-div">
-          <div class="ctrl-card">Pen</div>
-          <div class="ctrl-card">Eraser</div>
-          <div class="ctrl-card">RGB</div>
-          <div class="ctrl-card">Clear</div>
+          <div id="ctrl-pen" class="ctrl-card" onclick="selectPen()">Pen</div>
+          <div id="ctrl-eraser" class="ctrl-card" onclick="selectEraser()">Eraser</div>
+          <div id="ctrl-rgb" class="ctrl-card" onclick="selectRGB()">RGB</div>
+          <div id="ctrl-lock" class="ctrl-card" onclick="toggleLock()">Lock</div>
+          <div id="ctrl-clear" class="ctrl-card" onclick="selectClear()">Clear</div>
         </div>
       </div>
 
       <div class="app-right-div">
         <div class="grid-div"></div>
-        <div class="slidecontainer">
-          <input 
-            type="range" class="slider" oninput="changeGridNum(this.value)" 
-            min="1" max="100" value="16"
-          >
+        <div class="slider-div">
+          <div class="slidecontainer">
+            <input 
+              type="range" class="slider" oninput="changeGridNum(this.value)" 
+              min="1" max="100" value="16"
+            >
+          </div>
+          <span id="grid-num-display"></span>
         </div>
       </div>
     </div>
@@ -39,9 +43,9 @@
       This drawing app features drawing on a default 16x16 grid totaling over 
       420 pixels. This grid is adjustable from 1x1 to 100x100 through the green 
       slider below. To the right of the grid are the [P]en (black), [E]raser 
-      (white), [R]GB, and Clear. Each of which, save for Clear, are selectable 
-      through either their first letters or the alphanumeric [1, 2, 3] 
-      respectively...
+      (white), [R]GB, [L]ock (locks grid size), and Clear. Each of which, save 
+      for Clear, are selectable through either their first letters or the 
+      alphanumeric [1, 2, 3] respectively...
       <a target="_blank" href="https://github.com/Numbers00/odin-etch-a-sketch">
         Github
       </a>
