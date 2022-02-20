@@ -1,5 +1,26 @@
 window.onload = () => {
+  window.addEventListener('keydown', keydownDetected);
   addGridCards(16);
+}
+
+function keydownDetected(e) {
+  switch (e.keyCode) {
+    case (49):
+    case (80):
+      selectPen();
+      break;
+    case (50):
+    case (69):
+      selectEraser();
+      break;
+    case (51):
+    case (82):
+      selectRGB();
+      break;
+    case (52):
+    case (76):
+      toggleLock(document.getElementById('ctrl-lock'));
+  }
 }
 
 function gridCardHovered(e) {
