@@ -90,6 +90,7 @@ a {
 }
 
 .slider {
+  margin: 0;
   -webkit-appearance: none;
   width: 100%;
   height: 12.5px;

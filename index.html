@@ -23,7 +23,10 @@
       <div class="app-right-div">
         <div class="grid-div"></div>
         <div class="slidecontainer">
-          <input type="range" class="slider" min="1" max="100" value="16">
+          <input 
+            type="range" class="slider" oninput="changeGridNum(this.value)" 
+            min="1" max="100" value="16"
+          >
         </div>
       </div>
     </div>
