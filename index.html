@@ -9,22 +9,40 @@
   <script type="text/javascript" src="script.js" defer></script>
 </head>
 <body>
-  <div class="cols-div">
-    <div class="left-div">
-      <div class="ctrls-div">
-        <div class="ctrl-card">Black</div>
-        <div class="ctrl-card">White</div>
-        <div class="ctrl-card">Rainbow</div>
-        <div class="ctrl-card">Clear</div>
+  <div class="app-div">
+    <div class="app-cols-div">
+      <div class="app-left-div">
+        <div class="ctrls-div">
+          <div class="ctrl-card">Pen</div>
+          <div class="ctrl-card">Eraser</div>
+          <div class="ctrl-card">RGB</div>
+          <div class="ctrl-card">Clear</div>
+        </div>
       </div>
-    </div>
 
-    <div class="right-div">
-      <div class="grid-div"></div>
-      <div class="slidecontainer">
-        <input type="range" class="slider" min="1" max="100" value="16">
+      <div class="app-right-div">
+        <div class="grid-div"></div>
+        <div class="slidecontainer">
+          <input type="range" class="slider" min="1" max="100" value="16">
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="right-div">
+    <h1>Etch-a-Sketch</h1>
+
+    <p>
+      This drawing app features drawing on a default 16x16 grid totaling over 
+      420 pixels. This grid is adjustable from 1x1 to 100x100 through the green 
+      slider below. To the right of the grid are the [P]en (black), [E]raser 
+      (white), [R]GB, and Clear. Each of which, save for Clear, are selectable 
+      through either their first letters or the alphanumeric [1, 2, 3] 
+      respectively...
+      <a target="_blank" href="https://github.com/Numbers00/odin-etch-a-sketch">
+        Github
+      </a>
+    </p>
   </div>
 </body>
 </html>

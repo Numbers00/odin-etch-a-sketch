@@ -1,19 +1,28 @@
 body {
+  height: 96vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 4%;
 }
 
-.cols-div {
-  min-height: 385px;
-  max-height: 385px;
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+.app-div {
+  flex-grow: 2;
+  align-self: center;
+  width: 60%;
+  min-height: 438.5px;
+  max-height: 438.5px;
+  display: flex;
+  justify-content: center;
+}
+
+.app-cols-div {
   display: flex;
   gap: 40px;
-}
-
-.left-div {
-  min-height: 385px;
-  max-height: 385px;
 }
 
 .ctrls-div {
@@ -54,7 +63,7 @@ body {
   color: white;
 }
 
-.top-div {
+.app-right-div {
   display: flex;
   flex-direction: column;
 }
@@ -111,7 +120,8 @@ body {
   cursor: pointer;
 }
 
-.bottom-div {
-  display: flex;
-  justify-content: space-around;
+.right-div {
+  width: 30%;
+  align-self: center;
+  flex-grow: 1;
 }
