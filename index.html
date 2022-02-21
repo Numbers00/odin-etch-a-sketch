@@ -12,16 +12,14 @@
   <div class="app-div">
     <div class="app-cols-div">
       <div class="app-left-div">
-        <div class="ctrls-div">
-          <div id="ctrl-pen" class="ctrl-card" onclick="selectPen()">Pen</div>
-          <div id="ctrl-eraser" class="ctrl-card" onclick="selectEraser()">Eraser</div>
-          <div id="ctrl-rgb" class="ctrl-card" onclick="selectRGB()">RGB</div>
-          <div id="ctrl-lock" class="ctrl-card" onclick="toggleLock(this)">Lock</div>
-          <div id="ctrl-clear" class="ctrl-card" onclick="selectClear()">Clear</div>
+        <div class="selects-div">
+          <div id="select-pen" class="select-card" onclick="selectPen()">[P]en</div>
+          <div id="select-eraser" class="select-card" onclick="selectEraser()">[E]raser</div>
+          <div id="select-rgb" class="select-card" onclick="selectRGB()">[R]GB</div>
         </div>
       </div>
 
-      <div class="app-right-div">
+      <div class="app-center-div">
         <div class="grid-div"></div>
         <div class="slider-div">
           <div class="slidecontainer">
@@ -31,6 +29,14 @@
             >
           </div>
           <span id="grid-num-display"></span>
+        </div>
+      </div>
+
+      <div class="app-right-div">
+        <div class="ctrls-div">
+          <div id="ctrl-grid" class="ctrl-card" onclick="toggleGrid()">[G]rid</div>
+          <div id="ctrl-lock" class="ctrl-card" onclick="toggleLock(this)">[L]ock</div>
+          <div id="ctrl-clear" class="ctrl-card" onclick="selectClear()">Clear</div>
         </div>
       </div>
     </div>

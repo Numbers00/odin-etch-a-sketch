@@ -25,7 +25,7 @@ a {
   gap: 40px;
 }
 
-.ctrls-div {
+.selects-div, .ctrls-div {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -36,7 +36,7 @@ a {
   gap: 20px;
 }
 
-.ctrl-card {
+.select-card, .ctrl-card {
   min-width: 75px;
   max-width: 75px;
   min-height: 75px;
@@ -48,14 +48,14 @@ a {
   line-height: 75px;
 }
 
-.ctrl-card:hover:not(.active) {
+.select-card:hover:not(.active), .ctrl-card:hover:not(.active) {
   cursor: pointer;
   background-color: #555;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   color: white;
 }
 
-.ctrl-card:active {
+.select-card:active, .ctrl-card:active {
   cursor: pointer;
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
@@ -68,7 +68,7 @@ a {
   color: white;
 }
 
-.app-right-div {
+.app-center-div {
   display: flex;
   flex-direction: column;
 }
