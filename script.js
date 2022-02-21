@@ -28,9 +28,9 @@ function keydownDetected(e) {
 }
 
 function gridCardHovered(e) {
-  if (document.querySelector('#ctrl-pen').classList.contains('active')) {
+  if (document.querySelector('#select-pen').classList.contains('active')) {
     e.target.style.backgroundColor = 'black';
-  } else if (document.querySelector('#ctrl-eraser').classList.contains('active')) {
+  } else if (document.querySelector('#select-eraser').classList.contains('active')) {
     e.target.style.backgroundColor = 'white';
   } else {
     if (e.target.style.backgroundColor !== '' && e.target.style.backgroundColor !== 'white') {
@@ -79,21 +79,21 @@ function toggleLock(btnCard) {
 }
 
 function selectPen() {
-  document.querySelector('#ctrl-pen').classList.add('active');
-  document.querySelector('#ctrl-eraser').classList.remove('active');
-  document.querySelector('#ctrl-rgb').classList.remove('active');
+  document.querySelector('#select-pen').classList.add('active');
+  document.querySelector('#select-eraser').classList.remove('active');
+  document.querySelector('#select-rgb').classList.remove('active');
 }
 
 function selectEraser() {
-  document.querySelector('#ctrl-pen').classList.remove('active');
-  document.querySelector('#ctrl-eraser').classList.add('active');
-  document.querySelector('#ctrl-rgb').classList.remove('active');
+  document.querySelector('#select-pen').classList.remove('active');
+  document.querySelector('#select-eraser').classList.add('active');
+  document.querySelector('#select-rgb').classList.remove('active');
 }
 
 function selectRGB() {
-  document.querySelector('#ctrl-pen').classList.remove('active');
-  document.querySelector('#ctrl-eraser').classList.remove('active');
-  document.querySelector('#ctrl-rgb').classList.add('active');
+  document.querySelector('#select-pen').classList.remove('active');
+  document.querySelector('#select-eraser').classList.remove('active');
+  document.querySelector('#select-rgb').classList.add('active');
 }
 
 function selectClear() {
