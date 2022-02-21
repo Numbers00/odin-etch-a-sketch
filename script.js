@@ -6,6 +6,7 @@ window.onload = () => {
   addGridCards(16);
 
   toggleGrid(document.getElementById('ctrl-grid'));
+  toggleHover(document.getElementById('ctrl-hover'));
   toggleLock(document.getElementById('ctrl-lock'));
 }
 
@@ -24,6 +25,14 @@ function keydownDetected(e) {
       selectRGB();
       break;
     case (52):
+    case (71):
+      toggleGrid(document.getElementById('ctrl-grid'));
+      break;
+    case (53):
+    case (72):
+      toggleHover(document.getElementById('ctrl-hover'));
+      break;
+    case (54):
     case (76):
       toggleLock(document.getElementById('ctrl-lock'));
   }
@@ -92,11 +101,19 @@ function toggleGrid(gridBtn) {
   }
 }
 
-function toggleLock(btnCard) {
+function toggleHover(hoverBtn) {
+  if (!hoverBtn.classList.contains('active')) {
+    hoverBtn.classList.add('active');
+  } else {
+    hoverBtn.classList.remove('active');
+  }
+}
+
+function toggleLock(lockBtn) {
   const slider = document.querySelector('.slider');
   slider.disabled = !slider.disabled;
-  if (slider.disabled) btnCard.classList = 'ctrl-card active';
-  else btnCard.classList = 'ctrl-card';
+  if (slider.disabled) lockBtn.classList = 'ctrl-card active';
+  else lockBtn.classList = 'ctrl-card';
 }
 
 function selectPen() {
