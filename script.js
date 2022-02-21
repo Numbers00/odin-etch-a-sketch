@@ -2,9 +2,11 @@ window.onload = () => {
   window.addEventListener('keydown', keydownDetected);
 
   selectPen();
-  toggleLock(document.getElementById('ctrl-lock'));
   
   addGridCards(16);
+
+  toggleGrid(document.getElementById('ctrl-grid'));
+  toggleLock(document.getElementById('ctrl-lock'));
 }
 
 function keydownDetected(e) {
@@ -71,6 +73,25 @@ function changeGridNum(num) {
   addGridCards(num);
 }
 
+function toggleGrid(gridBtn) {
+  const gridCards = document.querySelectorAll('.grid-card');
+  if (!gridBtn.classList.contains('active')) {
+    gridBtn.classList.add('active');
+
+    for (let card in gridCards) {
+      console.log(card, gridCards[card], gridCards[card].classList);
+      if (gridCards[card].classList !== undefined) gridCards[card].classList.add('bordered-grid-card');
+    }
+  }
+  else {
+    gridBtn.classList.remove('active');
+
+    for (let card in gridCards) {
+      if (gridCards[card].classList !== undefined) gridCards[card].classList.remove('bordered-grid-card');
+    }
+  }
+}
+
 function toggleLock(btnCard) {
   const slider = document.querySelector('.slider');
   slider.disabled = !slider.disabled;
@@ -98,7 +119,7 @@ function selectRGB() {
 
 function selectClear() {
   const gridCards = document.querySelectorAll('.grid-card');
-  for (card in gridCards) {
+  for (let card in gridCards) {
     gridCards[card].style.backgroundColor = 'white';
   }
 }
