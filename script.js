@@ -1,5 +1,7 @@
 window.onload = () => {
   window.addEventListener('keydown', keydownDetected);
+  window.addEventListener('mousedown', mouseDownHandler);
+  window.addEventListener('mouseup', mouseUpHandler);
 
   selectPen();
   
@@ -38,18 +40,33 @@ function keydownDetected(e) {
   }
 }
 
+let mouseDown = 0;
+
+function mouseDownHandler(e) {
+  e.preventDefault();
+  ++mouseDown;
+
+  gridCardHovered(e);
+}
+
+function mouseUpHandler(e) {
+  --mouseDown;
+}
+
 function gridCardHovered(e) {
-  if (document.querySelector('#select-pen').classList.contains('active')) {
-    e.target.style.backgroundColor = 'black';
-  } else if (document.querySelector('#select-eraser').classList.contains('active')) {
-    e.target.style.backgroundColor = 'white';
-  } else {
-    if (e.target.style.backgroundColor !== '' && e.target.style.backgroundColor !== 'white') {
-      let lightness = e.target.style.backgroundColor.split(',')[2].slice(0, -2);
-      if (lightness !== 0) lightness -= 10;
-      e.target.style.backgroundColor = `hsl(${[0,60,240][Math.floor(Math.random() * 3)]},100%,${lightness}%)`;
+  if (mouseDown === 1) {
+    if (document.querySelector('#select-pen').classList.contains('active')) {
+      e.target.style.backgroundColor = 'black';
+    } else if (document.querySelector('#select-eraser').classList.contains('active')) {
+      e.target.style.backgroundColor = 'white';
     } else {
-      e.target.style.backgroundColor = `hsl(${[0,60,240][Math.floor(Math.random() * 3)]},100%,50%)`;
+      if (e.target.style.backgroundColor !== '' && e.target.style.backgroundColor !== 'white') {
+        let lightness = e.target.style.backgroundColor.split(',')[2].slice(0, -2);
+        if (lightness !== 0) lightness -= 10;
+        e.target.style.backgroundColor = `hsl(${[0,60,240][Math.floor(Math.random() * 3)]},100%,${lightness}%)`;
+      } else {
+        e.target.style.backgroundColor = `hsl(${[0,60,240][Math.floor(Math.random() * 3)]},100%,50%)`;
+      }
     }
   }
 }
@@ -88,7 +105,6 @@ function toggleGrid(gridBtn) {
     gridBtn.classList.add('active');
 
     for (let card in gridCards) {
-      console.log(card, gridCards[card], gridCards[card].classList);
       if (gridCards[card].classList !== undefined) gridCards[card].classList.add('bordered-grid-card');
     }
   }
