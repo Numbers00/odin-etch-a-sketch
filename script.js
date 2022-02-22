@@ -1,7 +1,7 @@
 window.onload = () => {
   window.addEventListener('keydown', keydownDetected);
-  window.addEventListener('mousedown', mouseDownHandler);
-  window.addEventListener('mouseup', mouseUpHandler);
+  document.querySelector('.grid-div').addEventListener('mousedown', mouseDownHandler);
+  document.querySelector('.grid-div').addEventListener('mouseup', mouseUpHandler);
 
   selectPen();
   
@@ -81,6 +81,10 @@ function addGridCards(num) {
 
     const gridCard = document.createElement('div');
     gridCard.classList.add('grid-card');
+    if (document.getElementById('ctrl-grid').classList.contains('active')) {
+      gridCard.classList.add('bordered-grid-card');
+    }
+
     gridCard.addEventListener('mouseenter', gridCardHovered);
 
     gridDiv.appendChild(gridCard);
