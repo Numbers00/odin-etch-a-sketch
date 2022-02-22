@@ -50,6 +50,23 @@ a {
   line-height: 75px;
 }
 
+.select-color {
+  -webkit-appearance: none;
+  border: none;
+  border-color: transparent;
+  padding: 0;
+  align-self: center;
+  height: 20px;
+}
+
+.select-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.select-color::-webkit-color-swatch {
+  border: none;
+}
+
 .select-card:hover:not(.active), .ctrl-card:hover:not(.active) {
   cursor: pointer;
   background-color: #555;
