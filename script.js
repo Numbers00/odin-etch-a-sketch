@@ -56,7 +56,8 @@ function mouseUpHandler(e) {
 function gridCardHovered(e) {
   if (mouseDown === 1) {
     if (document.querySelector('#select-pen').classList.contains('active')) {
-      e.target.style.backgroundColor = 'black';
+      console.log(document.getElementById('primary-color').value);
+      e.target.style.backgroundColor = document.getElementById('primary-color').value;
     } else if (document.querySelector('#select-eraser').classList.contains('active')) {
       e.target.style.backgroundColor = 'white';
     } else {
