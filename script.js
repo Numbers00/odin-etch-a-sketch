@@ -8,7 +8,6 @@ window.onload = () => {
   addGridCards(16);
 
   toggleGrid(document.getElementById('ctrl-grid'));
-  toggleHover(document.getElementById('ctrl-hover'));
   toggleLock(document.getElementById('ctrl-lock'));
 }
 
@@ -52,10 +51,6 @@ function keydownDetected(e) {
       toggleGrid(document.getElementById('ctrl-grid'));
       break;
     case (53):
-    case (72):
-      toggleHover(document.getElementById('ctrl-hover'));
-      break;
-    case (54):
     case (76):
       toggleLock(document.getElementById('ctrl-lock'));
   }
@@ -145,13 +140,13 @@ function toggleGrid(gridBtn) {
   }
 }
 
-function toggleHover(hoverBtn) {
-  if (!hoverBtn.classList.contains('active')) {
-    hoverBtn.classList.add('active');
-  } else {
-    hoverBtn.classList.remove('active');
-  }
-}
+// function toggleHover(hoverBtn) {
+//   if (!hoverBtn.classList.contains('active')) {
+//     hoverBtn.classList.add('active');
+//   } else {
+//     hoverBtn.classList.remove('active');
+//   }
+// }
 
 function toggleLock(lockBtn) {
   const slider = document.querySelector('.slider');
