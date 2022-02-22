@@ -12,8 +12,29 @@ window.onload = () => {
   toggleLock(document.getElementById('ctrl-lock'));
 }
 
+function switchColors() {
+  const primaryColor = document.getElementById('primary-color');
+  const secondaryColor = document.getElementById('secondary-color');
+
+  primaryColor.classList.add('glowing-border');
+  secondaryColor.classList.add('glowing-border');
+
+  setTimeout(() => {
+    primaryColor.classList = 'select-color';
+    secondaryColor.classList = 'select-color';
+  }, 600);
+
+  let temp = '';
+  temp = primaryColor.value;
+  primaryColor.value = secondaryColor.value;
+  secondaryColor.value = temp;
+}
+
 function keydownDetected(e) {
   switch (e.keyCode) {
+    case (48):
+      switchColors();
+      break;
     case (49):
     case (80):
       selectPen();
