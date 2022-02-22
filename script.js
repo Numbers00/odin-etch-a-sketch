@@ -44,16 +44,18 @@ let mouseDown = 0;
 
 function mouseDownHandler(e) {
   e.preventDefault();
-  ++mouseDown;
+  mouseDown = 1;
 
   gridCardHovered(e);
 }
 
 function mouseUpHandler(e) {
-  --mouseDown;
+  e.preventDefault();
+  mouseDown = 0;
 }
 
 function gridCardHovered(e) {
+  console.log(mouseDown);
   if (mouseDown === 1) {
     if (document.querySelector('#select-pen').classList.contains('active')) {
       console.log(document.getElementById('primary-color').value);
@@ -158,6 +160,6 @@ function selectRGB() {
 function selectClear() {
   const gridCards = document.querySelectorAll('.grid-card');
   for (let card in gridCards) {
-    gridCards[card].style.backgroundColor = 'white';
+    if (gridCards[card] !== undefined) gridCards[card].style.backgroundColor = 'white';
   }
 }
